@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Group Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Random Group Generator</h1>
+
+        <div class="input-section">
+            <div class="dial-group">
+                <label for="numStudents">Number of Students:</label>
+                <input type="range" id="numStudents" min="1" max="100" value="20" oninput="updateStudentValue(this.value)">
+                <span id="numStudentsValue">20</span>
+            </div>
+
+            <div class="group-choice">
+                <label>Choose Grouping Method:</label>
+                <div class="radio-buttons">
+                    <input type="radio" id="byPeople" name="groupMethod" value="byPeople" checked onclick="toggleGroupInput()">
+                    <label for="byPeople">People per Group</label>
+                    <input type="radio" id="byGroups" name="groupMethod" value="byGroups" onclick="toggleGroupInput()">
+                    <label for="byGroups">Number of Groups</label>
+                </div>
+            </div>
+
+            <div class="dial-group">
+                <label for="groupValue" id="groupValueLabel">People per Group:</label>
+                <input type="range" id="groupValue" min="1" max="20" value="4" oninput="updateGroupValue(this.value)">
+                <span id="groupValueDisplay">4</span>
+            </div>
+
+            <button id="generateButton">Generate Groups</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Generated Group Assignments:</h2>
+            <p id="outputString" class="output-text"></p>
+            <p id="disclaimer" class="disclaimer-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

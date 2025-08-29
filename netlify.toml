@@ -1,0 +1,6 @@
+[build]
+  publish = "public" # This tells Netlify where your HTML/CSS/JS files are
+
+[functions]
+  node_bundler = "esbuild" # Optional: can speed up Node.js functions
+  directory = "netlify/functions" # This tells Netlify where your serverless functions are
